@@ -3,5 +3,7 @@ import config from "../config";
 import mongoose, { Connection } from "mongoose";
 
 export default async () => {
-  return mongoose.connect("mongodb://localhost:27021/goopi");
+  return mongoose.connect(
+    process.env.MONGO_URI || "mongodb://localhost:27021/goopi"
+  );
 };
